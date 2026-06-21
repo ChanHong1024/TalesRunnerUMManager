@@ -4,6 +4,8 @@
 
 **Developed by [Porygon](https://github.com/ChanHong1024)**
 
+🌐 **Language**: [繁體中文](README.md) | [English](README_EN.md) | [한국어](README_KR.md)
+
 ## 功能
 
 - 📋 **地圖清單** — 從 Google Sheets 自動讀取地圖資料庫，顯示所有可用的 UMT 地圖
