@@ -81,6 +81,18 @@
 
 詳細資料來源文件：[Google Docs](https://docs.google.com/document/d/1A58tWn9h94VHtBmlC5YpmSG1ve42pg4zH4vHZghJiuk/edit?tab=t.0)
 
+## Contributing
+
+歡迎貢獻！請遵循以下流程：
+
+1. Fork 本 repo
+2. 建立你的分支：`git checkout -b feature/your-feature`
+3. Commit 你的更改：`git commit -m 'Add some feature'`
+4. Push 到分支：`git push origin feature/your-feature`
+5. 開一個 Pull Request
+
+> ⚠️ **所有 PR 需要通過審核才能合併到 master 分支。**
+
 ### 提交新地圖
 
 想新增地圖到資料庫？請填寫此表單：
