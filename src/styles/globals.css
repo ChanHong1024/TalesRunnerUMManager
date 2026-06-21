@@ -1,0 +1,535 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans TC", "Noto Sans KR", sans-serif;
+  background: #f6f7f9;
+  color: #17202c;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f6f7f9;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.topbar p {
+  margin: 6px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+.topbar-actions,
+.toolbar,
+.segmented,
+.settings-modal footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toolbar {
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.toolbar input {
+  width: min(520px, 55vw);
+  height: 40px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #fff;
+}
+
+.segmented {
+  padding: 4px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.segmented button {
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 12px;
+  color: #475467;
+  background: transparent;
+  cursor: pointer;
+}
+
+.segmented button.active {
+  color: #101828;
+  background: #eef2f6;
+}
+
+.button {
+  min-height: 36px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 13px;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.button.secondary {
+  border-color: #d0d5dd;
+  background: #fff;
+  color: #344054;
+}
+
+.button.danger {
+  background: #fff1f3;
+  color: #c01048;
+  border-color: #fecdd6;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 16px;
+  align-items: start;
+}
+
+.map-list,
+.details-panel {
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.table-head,
+.map-row {
+  display: grid;
+  gap: 14px;
+  align-items: center;
+}
+
+.table-head {
+  min-height: 42px;
+  padding: 0 16px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.map-row {
+  width: 100%;
+  min-height: 66px;
+  border: 0;
+  border-bottom: 1px solid #eaecf0;
+  padding: 10px 16px;
+  text-align: left;
+  background: #fff;
+  cursor: pointer;
+}
+
+.map-row:hover,
+.map-row.selected {
+  background: #f8fbff;
+}
+
+.map-title {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.map-title strong,
+.map-title small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-title strong {
+  font-size: 14px;
+}
+
+.map-title small {
+  color: #667085;
+  font-size: 12px;
+}
+
+.map-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #344054;
+  min-width: 0;
+}
+
+.column-picker {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.column-picker legend {
+  font-weight: 700;
+  font-size: 13px;
+  color: #344054;
+  padding: 0 4px;
+}
+
+.column-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.column-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.column-item:hover {
+  background: #f2f4f7;
+}
+
+.column-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #2563eb;
+}
+
+.column-empty {
+  color: #667085;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.column-selected {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.column-ordered {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border: 1px solid #eaecf0;
+  border-radius: 6px;
+  background: #f8fbff;
+  font-size: 13px;
+}
+
+.col-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.col-arrows {
+  display: flex;
+  gap: 2px;
+  margin-left: 8px;
+}
+
+.col-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d0d5dd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475467;
+}
+
+.col-btn:hover:not(:disabled) {
+  background: #eef2f6;
+}
+
+.col-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.col-btn.remove {
+  color: #c01048;
+  border-color: #fecdd6;
+}
+
+.col-btn.remove:hover {
+  background: #fff1f3;
+}
+
+.column-divider {
+  font-size: 11px;
+  color: #667085;
+  margin: 6px 0 4px;
+  font-weight: 600;
+}
+
+.column-available {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.column-add {
+  padding: 3px 10px;
+  border: 1px dashed #d0d5dd;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  color: #2563eb;
+}
+
+.column-add:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+/* Credits */
+.credits {
+  margin-top: 24px;
+  padding: 14px 0;
+  border-top: 1px solid #eaecf0;
+  text-align: center;
+}
+
+.credits p {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #667085;
+}
+
+.credits a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.credits a:hover {
+  text-decoration: underline;
+}
+
+.credits-disclaimer {
+  font-size: 11px !important;
+  color: #9ca3af !important;
+  font-style: italic;
+}
+
+.map-id {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+}
+
+.status {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.status.installedManaged {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.status.installedDetected {
+  background: #fffaeb;
+  color: #b54708;
+}
+
+.status.notInstalled {
+  background: #f2f4f7;
+  color: #475467;
+}
+
+.status.deactivated {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.details-panel {
+  padding: 18px;
+  position: sticky;
+  top: 16px;
+}
+
+.details-panel h2,
+.settings-modal h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+.details-panel h3 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+dl {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+dt {
+  color: #667085;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+dd {
+  margin: 0;
+  color: #344054;
+  font-size: 13px;
+}
+
+.break {
+  word-break: break-all;
+}
+
+.raw-data {
+  display: grid;
+  gap: 8px;
+  max-height: 340px;
+  overflow: auto;
+}
+
+.raw-data div {
+  display: grid;
+  gap: 3px;
+  border-top: 1px solid #eaecf0;
+  padding-top: 8px;
+}
+
+.raw-data span {
+  color: #667085;
+  font-size: 11px;
+}
+
+.raw-data strong {
+  color: #101828;
+  font-size: 12px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.empty,
+.error {
+  padding: 18px;
+  color: #667085;
+}
+
+.error {
+  margin-bottom: 14px;
+  border: 1px solid #fecdd6;
+  border-radius: 8px;
+  background: #fff1f3;
+  color: #c01048;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(16 24 40 / 0.42);
+  padding: 24px;
+}
+
+.settings-modal {
+  width: min(620px, 100%);
+  display: grid;
+  gap: 16px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 18px;
+  box-shadow: 0 24px 60px rgb(16 24 40 / 0.22);
+}
+
+.settings-modal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-modal label {
+  display: grid;
+  gap: 7px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.settings-modal input,
+.settings-modal select {
+  height: 40px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: #101828;
+  background: #fff;
+  font-weight: 500;
+}
+
+.settings-modal footer {
+  justify-content: flex-end;
+}
