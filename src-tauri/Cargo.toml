@@ -1,6 +1,6 @@
 [package]
 name = "tales-runner-umt-manager"
-version = "0.1.0"
+version = "0.1.1"
 description = "Tales Runner UMT Map Manager"
 authors = ["Porygon"]
 edition = "2021"
