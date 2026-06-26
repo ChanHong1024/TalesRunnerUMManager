@@ -25,6 +25,7 @@ A desktop application for managing player-created maps (UMT) for Tales Runner (�
 - 📊 **Customizable Columns** — Freely choose and reorder table columns (Display Name, Map ID, Category, Creator, etc.)
 - 🖼️ **Image Preview & Slideshow** — Image carousel above the details panel with click-to-zoom support
 - 🎬 **YouTube Video Embed** — Map intro videos embedded directly in the slideshow, no need to leave the app
+- ☑️ **Bulk Operations** — Select multiple maps and batch install, uninstall, activate, or deactivate with progress tracking
 - 🌐 **Multi-Language** — Supports English, Traditional Chinese (Hong Kong/Taiwan), 한국어
 
 ## Installation
